@@ -1,5 +1,14 @@
 {
   "projects": {
     "default": "monprojet-a3538"
+  },
+  "targets": {
+    "monprojet-a3538": {
+      "hosting": {
+        "react-meteo-demo": [
+          "react-meteo-demo"
+        ]
+      }
+    }
   }
 }

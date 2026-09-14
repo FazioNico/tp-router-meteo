@@ -1,6 +1,7 @@
 {
   "hosting": {
     "public": "dist",
+    "target": "react-meteo-demo",
     "ignore": [
       "firebase.json",
       "**/.*",
