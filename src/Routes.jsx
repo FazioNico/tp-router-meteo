@@ -1,6 +1,6 @@
 import { createBrowserRouter } from "react-router-dom";
-import { Search } from "./Search";
-import { Result } from "./Result";
+import { Search } from "./pages/Search";
+import { Result } from "./pages/Result";
 
 export const routes = createBrowserRouter([
   {
