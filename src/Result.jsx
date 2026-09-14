@@ -19,6 +19,7 @@ const fetchMeteoData = async (city) => {
 
 export function Result() {
   const { city } = useParams();
+  const [errorMessage, setErrorMessage] = useState(null);
   const [meteoData, setMeteoData] = useState(null);
 
   useEffect(() => {
@@ -30,11 +31,21 @@ export function Result() {
       .then((data) => {
         setMeteoData(data);
         console.log("Meteo data fetched:", data);
+      })
+      .catch((error) => {
+        setErrorMessage(error.message);
       });
   }, []);
 
   return (
     <>
+      {errorMessage ? (
+        <div>
+          <p>Error: {errorMessage}</p>
+          <Link to="/">Back to Search</Link>
+        </div>
+      ) : null} 
+
       {meteoData ? (
         <div>
           <Link to="/">Back to Search</Link>
@@ -43,7 +54,9 @@ export function Result() {
           <p>Wind Speed: {meteoData.current_weather.wind_speed} km/h</p>
         </div>
       ) : (
-        <p>Loading...</p>
+        !errorMessage && (
+          <p>Loading...</p>
+        )
       )}
     </>
   );
