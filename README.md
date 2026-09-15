@@ -34,7 +34,6 @@ src/
     └── MeteoService.jsx  # API integration service
 ```
 
-
 ## Getting Started
 
 ### Prerequisites
